@@ -38,9 +38,9 @@ export default function Hero() {
           <Image
             src="/images/SantiagoR-web.png"
             alt="Developer Graphic"
-            className="rounded-lg shadow-md"
             width={400}
             height={400}
+            priority
           />
         </div>
       </div>
