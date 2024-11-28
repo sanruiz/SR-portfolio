@@ -13,8 +13,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300">
-            Specializing in modern web technologies like Next.js and wpGraphQL
-            to build scalable and user-friendly solutions.
+            Specializing in modern web technologies like Next.js and GraphQL to
+            build scalable and user-friendly solutions.
           </p>
 
           <div className="flex justify-center md:justify-start space-x-4">
@@ -25,7 +25,7 @@ export default function Hero() {
               View Portfolio
             </a>
             <a
-              href="#contact"
+              href="#footer"
               className="border border-indigo-500 text-indigo-500 px-6 py-3 rounded-lg shadow-md hover:bg-indigo-500 hover:text-white transition duration-300"
             >
               Contact Me

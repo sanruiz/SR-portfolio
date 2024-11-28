@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
+    <footer className="bg-gray-900 text-gray-300 py-10" id="footer">
       <div className="container mx-auto max-w-screen-xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Branding */}
         <div>
@@ -117,7 +117,7 @@ export default function Footer() {
                 clipRule="evenodd"
                 d="M80.907 79.339L17.0151 0H0V79.3059H13.6121V16.9516L63.8067 79.339H80.907Z"
                 fill="#fff"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
               <path
                 d="M333.607 78.8546C332.61 78.8546 331.762 78.5093 331.052 77.8186C330.342 77.1279 329.991 76.2917 330 75.3011C329.991 74.3377 330.342 73.5106 331.052 72.8199C331.762 72.1292 332.61 71.7838 333.607 71.7838C334.566 71.7838 335.405 72.1292 336.115 72.8199C336.835 73.5106 337.194 74.3377 337.204 75.3011C337.194 75.9554 337.028 76.5552 336.696 77.0914C336.355 77.6368 335.922 78.064 335.377 78.373C334.842 78.6911 334.252 78.8546 333.607 78.8546Z"
