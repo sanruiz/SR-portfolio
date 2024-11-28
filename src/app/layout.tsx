@@ -3,7 +3,6 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Cta from "@/components/cta";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +51,6 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Cta />
         <Footer />
       </body>
     </html>

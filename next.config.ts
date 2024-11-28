@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "placehold.co",
       "simpleicons.org",
       "i0.wp.com",
+      "wp.sanruiz.co",
     ],
     localPatterns: [
       {
