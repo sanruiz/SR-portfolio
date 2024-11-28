@@ -18,7 +18,7 @@ export default async function Portfolio() {
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts?.map((post) => (
             <ProjectCard
-              key={post.id}
+              key={post.slug}
               title={post.title}
               description={post.content}
               technologies={post.tags.nodes.map((tag) => tag.name)}

@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             Technologies
           </h2>
           <div className="flex flex-wrap gap-2">
-            {project.tags.nodes.map((tag) => (
+            {project.tags?.nodes?.map((tag) => (
               <span
                 key={tag.slug}
                 className="bg-indigo-100 text-indigo-600 text-sm font-medium px-3 py-1 rounded-full"
