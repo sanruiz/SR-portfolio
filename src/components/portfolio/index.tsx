@@ -15,7 +15,7 @@ export default async function Portfolio() {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-11 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts?.map((post) => (
             <ProjectCard
               key={post.slug}

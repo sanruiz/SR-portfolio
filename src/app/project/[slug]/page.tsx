@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <section className="bg-gray-100 text-gray-700 py-20">
-      <div className="container mx-auto max-w-screen-xl px-4">
+      <div className="container mx-auto max-w-screen-lg px-4">
         {/* Project Title */}
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
           {project.title}
@@ -59,10 +59,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="flex flex-wrap gap-2">
             {project.tags?.nodes?.map((tag) => (
               <span
-                key={tag?.slug}
+                key={tag.slug}
                 className="bg-indigo-100 text-indigo-600 text-sm font-medium px-3 py-1 rounded-full"
               >
-                {tag?.name}
+                {tag.name}
               </span>
             ))}
           </div>
