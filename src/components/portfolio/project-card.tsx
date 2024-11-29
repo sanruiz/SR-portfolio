@@ -17,13 +17,15 @@ export default function ProjectCard({
 }: ProjectProps) {
   return (
     <div className="bg-slate-800 rounded-lg shadow-lg shadow-indigo-500/50 overflow-hidden">
-      <Image
-        src={imageUrl}
-        alt={`${title} Thumbnail`}
-        className="w-full h-48 object-cover"
-        height={192}
-        width={480}
-      />
+      <a href={`/project/${projectUrl}`}>
+        <Image
+          src={imageUrl}
+          alt={`${title} Thumbnail`}
+          className="w-full h-48 object-cover"
+          height={192}
+          width={480}
+        />
+      </a>
       <div className="p-6">
         <h3 className="text-xl font-semibold text-white">{title}</h3>
         {/* <p

@@ -66,7 +66,7 @@ export default function Header() {
           <MenuLink href="/#about">About Me</MenuLink>
           <MenuLink href="/#portfolio">Portfolio</MenuLink>
           <MenuLink href="/#skills">Skills</MenuLink>
-          <MenuLink href="#contact">Contact</MenuLink>
+          <MenuLink href="/#contact">Contact</MenuLink>
         </nav>
 
         {/* CTA Button */}
