@@ -9,7 +9,7 @@ interface ProjectPageProps {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = (await params) || {};
+  const { slug } = await params;
 
   const project = await getProjectBySlug(slug);
 
@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="flex flex-wrap gap-2">
             {project.tags?.nodes?.map((tag) => (
               <span
-                key={tag.slug}
+                key={tag.slug || tag.name}
                 className="bg-indigo-100 text-indigo-600 text-sm font-medium px-3 py-1 rounded-full"
               >
                 {tag.name}

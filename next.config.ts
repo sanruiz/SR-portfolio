@@ -3,13 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: [
-      "via.placeholder.com",
-      "placehold.co",
-      "simpleicons.org",
-      "i0.wp.com",
-      "wp.sanruiz.co",
-    ],
     localPatterns: [
       {
         pathname: "/images/**",
@@ -19,28 +12,33 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "via.placeholder.com/**",
+        hostname: "via.placeholder.com",
         port: "",
-        search: "",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "placehold.co/**",
+        hostname: "placehold.co",
         port: "",
-        search: "",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "simpleicons.org/icons/**",
+        hostname: "simpleicons.org",
         port: "",
-        search: "",
+        pathname: "/icons/**",
       },
       {
         protocol: "https",
         hostname: "i0.wp.com",
-        pathname: "wp.sanruiz.co/wp-content/uploads/**",
         port: "",
-        search: "",
+        pathname: "/wp.sanruiz.co/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wp.sanruiz.co",
+        port: "",
+        pathname: "/wp-content/uploads/**",
       },
     ],
   },
