@@ -1,7 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
+import Image from "next/image";
+import { ReportCard } from "@/components/report-card";
 
 const somaReports = [
   {
@@ -69,78 +67,7 @@ export default function SomaInformsPage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {somaReports.map((center) => (
-              <Card
-                key={center.name}
-                className="overflow-hidden hover:shadow-lg transition-shadow bg-gray-100 dark:bg-gray-900"
-              >
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-center h-24 mb-2">
-                    <Link
-                      href={center.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        src={center.logo || "/placeholder.svg"}
-                        alt={`${center.name} logo`}
-                        width={200}
-                        height={80}
-                        className="object-contain max-h-full"
-                      />
-                    </Link>
-                  </div>
-                  <CardTitle className="text-2xl text-center sr-only">
-                    {center.name}
-                  </CardTitle>
-                  <CardDescription className="text-center sr-only">
-                    Centro Comercial
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-row gap-3 justify-center">
-                    <Button asChild variant="default">
-                      <Link
-                        href={center.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Visitar Sitio Web →
-                      </Link>
-                    </Button>
-                    {center.report && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="bg-transparent"
-                      >
-                        <Link
-                          href={center.report}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                          </svg>
-                          Ver Informe
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+              <ReportCard key={center.name} {...center} />
             ))}
           </div>
 
@@ -148,76 +75,7 @@ export default function SomaInformsPage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {shoppingCenters.map((center) => (
-              <Card
-                key={center.name}
-                className="overflow-hidden hover:shadow-lg transition-shadow bg-gray-100 dark:bg-gray-900"
-              >
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-center h-24 mb-2">
-                    <Link
-                      href={center.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        src={center.logo || "/placeholder.svg"}
-                        alt={`${center.name} logo`}
-                        width={200}
-                        height={80}
-                        className="object-contain max-h-full"
-                      />
-                    </Link>
-                  </div>
-                  <CardTitle className="text-2xl text-center sr-only">
-                    {center.name}
-                  </CardTitle>
-                  <CardDescription className="text-center sr-only">
-                    Centro Comercial
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-row gap-3 justify-center">
-                    <Button asChild variant="default">
-                      <Link
-                        href={center.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Visitar Sitio Web →
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="bg-transparent"
-                    >
-                      <Link
-                        href={center.report}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <line x1="18" y1="20" x2="18" y2="10" />
-                          <line x1="12" y1="20" x2="12" y2="4" />
-                          <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg>
-                        Ver Informe
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <ReportCard key={center.name} {...center} />
             ))}
           </div>
         </div>
