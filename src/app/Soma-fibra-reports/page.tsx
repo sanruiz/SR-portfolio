@@ -1,31 +1,22 @@
 import Image from "next/image";
 import { ReportCard } from "@/components/report-card";
 
-
-
-const shoppingCenters = [
+const somaReports = [
   {
-    name: "Plaza Satélite",
-    website: "https://plazasatelite.com.mx/",
-    report:
-      "https://lookerstudio.google.com/u/0/reporting/138c60f3-69c3-44d9-98ee-e8b5ca21ded8/page/mNGaF",
-    logo: "https://plazasatelite.com.mx/wp-content/uploads/2025/02/logo.svg",
+    name: "SOMA",
+    website: "https://soma.group/",
+    report: "https://lookerstudio.google.com/s/oRNLjdWFn8U",
+    logo: "https://soma.group/wp-content/uploads/2020/10/soma_black.svg",
   },
   {
-    name: "Andamar",
-    website: "https://andamar.com.mx/",
+    name: "Fibra SOMA",
+    website: "https://fibrasoma.group/",
     report:
-      "https://lookerstudio.google.com/reporting/c09d92ba-73f8-4cd8-9b95-71a09f054ed1",
-    logo: "https://andamar.com.mx/wp-content/uploads/2025/02/Asset-1.svg",
-  },
-  {
-    name: "Antea",
-    website: "https://antea.mx/",
-    report:
-      "https://lookerstudio.google.com/reporting/16f4230c-e359-49ff-a033-45fa1496486d",
-    logo: "https://antea.mx/wp-content/uploads/2025/02/anteaLogoAzulSecond.svg",
+      "https://lookerstudio.google.com/reporting/b1baa229-a8df-4c47-9e00-b55c28153a35",
+    logo: "https://fibrasoma.group/wp-content/uploads/2020/11/FIBRASOMA_logo.svg",
   },
 ];
+
 
 export default function SomaInformsPage() {
   return (
@@ -52,10 +43,14 @@ export default function SomaInformsPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {shoppingCenters.map((center) => (
+            {somaReports.map((center) => (
               <ReportCard key={center.name} {...center} />
             ))}
           </div>
+
+          <hr className="my-12 border-t border-gray-300 dark:border-gray-700" />
+
+          
         </div>
       </div>
     </div>
