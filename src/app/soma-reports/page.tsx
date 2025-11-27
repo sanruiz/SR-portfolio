@@ -8,7 +8,7 @@ const shoppingCenters = [
     name: "Plaza Satélite",
     website: "https://plazasatelite.com.mx/",
     report:
-      "https://lookerstudio.google.com/u/0/reporting/138c60f3-69c3-44d9-98ee-e8b5ca21ded8/page/mNGaF",
+      "https://lookerstudio.google.com/u/0/reporting/a562c7cf-a8b7-4615-b493-0ea9343cc998/page/mNGaF",
     logo: "https://plazasatelite.com.mx/wp-content/uploads/2025/02/logo.svg",
   },
   {
