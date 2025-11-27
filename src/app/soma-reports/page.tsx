@@ -25,6 +25,13 @@ const shoppingCenters = [
       "https://lookerstudio.google.com/reporting/16f4230c-e359-49ff-a033-45fa1496486d",
     logo: "https://antea.mx/wp-content/uploads/2025/02/anteaLogoAzulSecond.svg",
   },
+  {
+    name: "Angelopolis",
+    website: "https://angelopolispuebla.com.mx/",
+    report:
+      "https://lookerstudio.google.com/u/0/reporting/138c60f3-69c3-44d9-98ee-e8b5ca21ded8/",
+    logo: "https://angelopolispuebla.com.mx/wp-content/uploads/2025/02/logotipo-1.svg",
+  },
 ];
 
 export default function SomaInformsPage() {
