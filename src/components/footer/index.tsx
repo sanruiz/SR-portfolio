@@ -79,7 +79,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="mt-10 text-center border-t border-gray-700 pt-6">
         <p className="text-gray-500">
-          &copy; 2024 Santiago Ramirez. All rights reserved.
+          &copy; {new Date().getFullYear()} Santiago Ramirez. All rights reserved.
         </p>
         {/* Powered by Next.js */}
         <p className="text-gray-400 text-base my-4 flex items-center justify-center gap-2">
