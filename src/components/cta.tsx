@@ -1,35 +1,38 @@
 export default function Cta() {
   return (
-    <section
-      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 text-white py-20 text-center bg"
-      style={{
-        backgroundSize: "200% 200%",
-        animation: "gradient 6s ease infinite",
-      }}
-    >
-      <div className="container mx-auto px-4">
-        {/* Headline */}
-        <h2 className="text-4xl font-bold mb-4">
-          Let’s Build Something Amazing Together!
-        </h2>
-        <p className="text-lg mb-8">
-          Whether you have a project in mind or just want to connect, feel free
-          to reach out.
+    <section className="relative bg-zinc-100 dark:bg-zinc-950 border-y border-zinc-200 dark:border-zinc-800 py-28 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,rgba(124,58,237,0.06),transparent)] dark:bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,rgba(124,58,237,0.12),transparent)]" />
+      <div className="absolute inset-0 bg-dot-grid opacity-60" />
+
+      <div className="relative container mx-auto max-w-screen-xl px-4 text-center">
+        <p className="font-mono text-violet-600/80 dark:text-violet-400/80 text-sm mb-5 tracking-wide">
+          // open to new opportunities
         </p>
 
-        {/* Call-to-Action Buttons */}
-        <div className="flex justify-center space-x-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 leading-tight tracking-tight">
+          Ready to Ship Your{" "}
+          <span className="gradient-text">Next Project?</span>
+        </h2>
+
+        <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          I&apos;m currently available for freelance work and open to full-time
+          roles. Whether you need a product built from scratch, a performance
+          overhaul, or an extra set of hands on a growing team — let&apos;s talk.
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a
             href="#contact"
-            className="bg-white text-indigo-500 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition duration-300"
+            className="px-8 py-3.5 bg-violet-600 hover:bg-violet-500 text-white rounded-lg font-medium transition-colors duration-200"
           >
-            Get in Touch
+            Start a Project
           </a>
           <a
             href="#portfolio"
-            className="bg-transparent border border-white px-6 py-3 rounded-lg shadow-md hover:bg-white hover:text-indigo-500 hover:scale-105 hover:shadow-lg transition duration-300"
+            className="px-8 py-3.5 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg font-medium transition-all duration-200"
           >
-            View My Work
+            View Case Studies
           </a>
         </div>
       </div>

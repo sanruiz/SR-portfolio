@@ -1,21 +1,35 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+
+type MenuLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+};
+
+function MenuLink({ href, children, onClick }: MenuLinkProps) {
+  return (
+    <Link
+      href={href}
+      className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-sm transition-colors duration-200"
+      onClick={onClick}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLElement>(null);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -23,98 +37,74 @@ export default function Header() {
         closeMobileMenu();
       }
     };
-
     if (isMobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
-  const MenuLink = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => (
-    <Link
-      href={href}
-      className="hover:text-indigo-400"
-      onClick={closeMobileMenu}
-    >
-      {children}
-    </Link>
-  );
-
   return (
-    <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 shadow-lg fixed w-full z-50">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <header className="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/60 fixed w-full z-50">
+      <div className="container mx-auto max-w-screen-xl px-4 py-3.5 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-2xl font-bold text-white hover:text-indigo-400"
-        >
-          Santiago Ramirez
+        <Link href="/" className="flex items-center gap-3" onClick={closeMobileMenu}>
+          <span className="font-mono text-xs bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 px-2 py-1 rounded text-violet-600 dark:text-violet-400 tracking-widest">
+            &lt;SR /&gt;
+          </span>
+          <span className="font-semibold text-zinc-900 dark:text-white text-sm hidden sm:block">
+            Santiago Ramirez
+          </span>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
-          <MenuLink href="/">Home</MenuLink>
-          <MenuLink href="/#about">About Me</MenuLink>
-          <MenuLink href="/#portfolio">Portfolio</MenuLink>
-          <MenuLink href="/#skills">Skills</MenuLink>
-          <MenuLink href="/#contact">Contact</MenuLink>
+        <nav className="hidden md:flex items-center gap-8">
+          <MenuLink href="/" onClick={closeMobileMenu}>Home</MenuLink>
+          <MenuLink href="/#about" onClick={closeMobileMenu}>About</MenuLink>
+          <MenuLink href="/#portfolio" onClick={closeMobileMenu}>Portfolio</MenuLink>
+          <MenuLink href="/#skills" onClick={closeMobileMenu}>Skills</MenuLink>
+          <MenuLink href="/#contact" onClick={closeMobileMenu}>Contact</MenuLink>
         </nav>
 
-        {/* CTA Button */}
-        <Link
-          href="#contact"
-          className="hidden md:block bg-indigo-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition duration-300"
-        >
-          Hire Me
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-white hover:text-indigo-400"
-          onClick={toggleMobileMenu}
-          aria-label={
-            isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"
-          }
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </Button>
+        {/* Right actions */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="#contact"
+            className="hidden md:block px-4 py-2 border border-zinc-300 dark:border-zinc-700 hover:border-violet-400 dark:hover:border-violet-500/60 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg text-sm transition-all duration-200"
+          >
+            Hire Me
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <nav
           ref={menuRef}
-          className="md:hidden flex flex-col items-center space-y-4 p-4 bg-gray-800 border-t fixed inset-x-0 top-[60px] z-40"
+          className="md:hidden flex flex-col items-center gap-5 p-6 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 fixed inset-x-0 top-[57px] z-40"
         >
-          <MenuLink href="/">Home</MenuLink>
-          <MenuLink href="/#about">About Me</MenuLink>
-          <MenuLink href="/#portfolio">Portfolio</MenuLink>
-          <MenuLink href="/#skills">Skills</MenuLink>
-          <MenuLink href="/#contact">Contact</MenuLink>
-          <Button
-            asChild
-            className="w-full bg-indigo-500 text-white hover:bg-indigo-600 transition duration-300"
+          <MenuLink href="/" onClick={closeMobileMenu}>Home</MenuLink>
+          <MenuLink href="/#about" onClick={closeMobileMenu}>About</MenuLink>
+          <MenuLink href="/#portfolio" onClick={closeMobileMenu}>Portfolio</MenuLink>
+          <MenuLink href="/#skills" onClick={closeMobileMenu}>Skills</MenuLink>
+          <MenuLink href="/#contact" onClick={closeMobileMenu}>Contact</MenuLink>
+          <Link
+            href="#contact"
+            onClick={closeMobileMenu}
+            className="w-full text-center px-4 py-2.5 bg-violet-600 hover:bg-violet-500 text-white rounded-lg text-sm font-medium transition-colors"
           >
-            <Link href="#contact" onClick={closeMobileMenu}>
-              Hire Me
-            </Link>
-          </Button>
+            Hire Me
+          </Link>
         </nav>
       )}
     </header>

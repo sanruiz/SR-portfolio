@@ -5,17 +5,21 @@ export default async function Portfolio() {
   const posts = await getPostsWP();
 
   return (
-    <section className="bg-gray-900 text-gray-300 py-20" id="portfolio">
+    <section className="bg-white dark:bg-zinc-900 py-24" id="portfolio">
       <div className="container mx-auto max-w-screen-xl px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white">Portfolio</h2>
-          <p className="text-lg text-gray-400 mt-4">
-            Here are some of the projects I’ve worked on, showcasing my skills
-            in modern web development.
-          </p>
+        {/* Section header */}
+        <div className="flex items-center gap-4 mb-14">
+          <span className="font-mono text-violet-600 dark:text-violet-400 text-sm">02.</span>
+          <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">Portfolio</h2>
+          <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />
         </div>
 
-        <div className="grid gap-11 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <p className="text-zinc-500 dark:text-zinc-500 text-base mb-10 max-w-xl">
+          Production work delivered for real clients — web apps, headless CMS
+          builds, and custom WordPress solutions that are live and running today.
+        </p>
+
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts?.map((post) => (
             <ProjectCard
               key={post.slug}

@@ -4,6 +4,7 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Providers } from "@/components/providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`h-full scroll-smooth ${inter.variable} ${roboto_mono.variable} antialiased`}
     >
       <head>
@@ -51,11 +53,13 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </Providers>
       </body>
     </html>
   );

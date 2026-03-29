@@ -8,17 +8,21 @@ interface SkillProps {
 
 export default function SkillCard({ name, description, iconUrl }: SkillProps) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-      <Image
-        src={iconUrl}
-        alt={`${name} Icon`}
-        className="w-16 h-16 mx-auto mb-4 transition duration-300 transform hover:rotate-12"
-        width={64}
-        height={64}
-      />
-      <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
+    <div className="group bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-violet-400/50 dark:hover:border-violet-500/40 rounded-xl p-6 transition-all duration-300">
+      <div className="w-10 h-10 mb-5 transition-transform duration-300 group-hover:-translate-y-1">
+        <Image
+          src={iconUrl}
+          alt={`${name} icon`}
+          width={40}
+          height={40}
+          className="w-full h-full object-contain icon-filter"
+        />
+      </div>
+      <h3 className="text-zinc-800 dark:text-zinc-100 font-semibold text-base">{name}</h3>
       {description && (
-        <p className="text-sm text-gray-600 mt-2">{description}</p>
+        <p className="text-zinc-500 dark:text-zinc-500 text-sm mt-2 leading-relaxed">
+          {description}
+        </p>
       )}
     </div>
   );
