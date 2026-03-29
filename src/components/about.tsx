@@ -50,11 +50,11 @@ export default function About() {
               <span className="text-violet-600 dark:text-violet-400 font-medium">TypeScript</span>,
               and{" "}
               <span className="text-violet-600 dark:text-violet-400 font-medium">GraphQL</span>{" "}
-              for modern web apps, paired with deep{" "}
+              for modern web apps, with deep{" "}
               <span className="text-violet-600 dark:text-violet-400 font-medium">WordPress</span>{" "}
-              expertise for headless and CMS-driven projects. I write clean, maintainable
-              code — and I&apos;m equally comfortable navigating greenfield builds and
-              legacy systems.
+              expertise for headless and CMS-driven projects. I also build production{" "}
+              <span className="text-violet-600 dark:text-violet-400 font-medium">AI features</span>{" "}
+              — chat interfaces, RAG pipelines, and LLM integrations that actually ship.
             </p>
             <p>
               If you need a developer who can own a project end-to-end and communicate
