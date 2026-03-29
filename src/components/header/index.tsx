@@ -5,6 +5,20 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
+type MenuLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+};
+
+function MenuLink({ href, children, onClick }: MenuLinkProps) {
+  return (
+    <Link href={href} className="hover:text-indigo-400" onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLElement>(null);
@@ -33,22 +47,6 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  const MenuLink = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => (
-    <Link
-      href={href}
-      className="hover:text-indigo-400"
-      onClick={closeMobileMenu}
-    >
-      {children}
-    </Link>
-  );
-
   return (
     <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 shadow-lg fixed w-full z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -62,11 +60,21 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
-          <MenuLink href="/">Home</MenuLink>
-          <MenuLink href="/#about">About Me</MenuLink>
-          <MenuLink href="/#portfolio">Portfolio</MenuLink>
-          <MenuLink href="/#skills">Skills</MenuLink>
-          <MenuLink href="/#contact">Contact</MenuLink>
+          <MenuLink href="/" onClick={closeMobileMenu}>
+            Home
+          </MenuLink>
+          <MenuLink href="/#about" onClick={closeMobileMenu}>
+            About Me
+          </MenuLink>
+          <MenuLink href="/#portfolio" onClick={closeMobileMenu}>
+            Portfolio
+          </MenuLink>
+          <MenuLink href="/#skills" onClick={closeMobileMenu}>
+            Skills
+          </MenuLink>
+          <MenuLink href="/#contact" onClick={closeMobileMenu}>
+            Contact
+          </MenuLink>
         </nav>
 
         {/* CTA Button */}
@@ -102,11 +110,21 @@ export default function Header() {
           ref={menuRef}
           className="md:hidden flex flex-col items-center space-y-4 p-4 bg-gray-800 border-t fixed inset-x-0 top-[60px] z-40"
         >
-          <MenuLink href="/">Home</MenuLink>
-          <MenuLink href="/#about">About Me</MenuLink>
-          <MenuLink href="/#portfolio">Portfolio</MenuLink>
-          <MenuLink href="/#skills">Skills</MenuLink>
-          <MenuLink href="/#contact">Contact</MenuLink>
+          <MenuLink href="/" onClick={closeMobileMenu}>
+            Home
+          </MenuLink>
+          <MenuLink href="/#about" onClick={closeMobileMenu}>
+            About Me
+          </MenuLink>
+          <MenuLink href="/#portfolio" onClick={closeMobileMenu}>
+            Portfolio
+          </MenuLink>
+          <MenuLink href="/#skills" onClick={closeMobileMenu}>
+            Skills
+          </MenuLink>
+          <MenuLink href="/#contact" onClick={closeMobileMenu}>
+            Contact
+          </MenuLink>
           <Button
             asChild
             className="w-full bg-indigo-500 text-white hover:bg-indigo-600 transition duration-300"
