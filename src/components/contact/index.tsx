@@ -96,7 +96,7 @@ export default function Contact() {
             <div className="space-y-3 text-sm text-zinc-500 dark:text-zinc-500">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-violet-600 dark:text-violet-400">→</span>
-                <span>sanruiz@gmail.com</span>
+                <span>info@sanruiz.co</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-mono text-violet-600 dark:text-violet-400">→</span>

@@ -55,10 +55,10 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="mailto:sanruiz@gmail.com"
+                  href="mailto:info@sanruiz.co"
                   className="text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 text-sm transition-colors"
                 >
-                  sanruiz@gmail.com
+                  info@sanruiz.co
                 </Link>
               </li>
               <li>
