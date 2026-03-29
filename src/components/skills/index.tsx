@@ -1,3 +1,4 @@
+import { Sparkles } from "lucide-react";
 import SkillCard from "./skill-card";
 
 const skills = [
@@ -21,6 +22,30 @@ const skills = [
   },
   {
     id: 4,
+    name: "GraphQL",
+    description: "Designing and consuming GraphQL APIs — from schema design to optimized queries and headless CMS integrations.",
+    iconUrl: "https://simpleicons.org/icons/graphql.svg",
+  },
+  {
+    id: 5,
+    name: "AI / LLM APIs",
+    description: "Building production AI features with OpenAI, Anthropic, and the Vercel AI SDK — chat, RAG pipelines, and intelligent automation.",
+    Icon: Sparkles,
+  },
+  {
+    id: 6,
+    name: "Tailwind CSS",
+    description: "My go-to for styling — utility-first, consistent design systems, and dark mode without the stylesheet headaches.",
+    iconUrl: "https://simpleicons.org/icons/tailwindcss.svg",
+  },
+  {
+    id: 7,
+    name: "Node.js",
+    description: "REST APIs, serverless functions, webhooks, and backend integrations — comfortable owning the full stack.",
+    iconUrl: "https://simpleicons.org/icons/nodedotjs.svg",
+  },
+  {
+    id: 8,
     name: "WordPress",
     description: "Custom themes, bespoke plugins, WooCommerce, and headless setups — I've done it all at scale.",
     iconUrl: "https://simpleicons.org/icons/wordpress.svg",
@@ -52,6 +77,7 @@ export default function Skills() {
               name={skill.name}
               description={skill.description}
               iconUrl={skill.iconUrl}
+              Icon={skill.Icon}
             />
           ))}
         </div>
