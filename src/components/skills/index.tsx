@@ -1,3 +1,4 @@
+import { Sparkles } from "lucide-react";
 import SkillCard from "./skill-card";
 
 const skills = [
@@ -29,7 +30,7 @@ const skills = [
     id: 5,
     name: "AI / LLM APIs",
     description: "Building production AI features with OpenAI, Anthropic, and the Vercel AI SDK — chat, RAG pipelines, and intelligent automation.",
-    iconUrl: "https://simpleicons.org/icons/openai.svg",
+    Icon: Sparkles,
   },
   {
     id: 6,
@@ -76,6 +77,7 @@ export default function Skills() {
               name={skill.name}
               description={skill.description}
               iconUrl={skill.iconUrl}
+              Icon={skill.Icon}
             />
           ))}
         </div>
