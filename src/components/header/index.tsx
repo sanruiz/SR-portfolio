@@ -44,7 +44,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/60 fixed w-full z-50">
+    <header className="bg-white/80 dark:bg-[#111214]/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/60 fixed w-full z-50">
       <div className="container mx-auto max-w-screen-xl px-4 py-3.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3" onClick={closeMobileMenu}>

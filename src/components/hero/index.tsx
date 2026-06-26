@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-white dark:bg-zinc-950 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-white dark:bg-[#111214] overflow-hidden">
       {/* Radial violet glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,58,237,0.07),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,58,237,0.18),transparent)]" />
       {/* Dot grid */}

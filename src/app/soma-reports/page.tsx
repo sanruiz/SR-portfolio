@@ -32,6 +32,13 @@ const shoppingCenters = [
       "https://lookerstudio.google.com/u/0/reporting/138c60f3-69c3-44d9-98ee-e8b5ca21ded8/",
     logo: "https://angelopolispuebla.com.mx/wp-content/uploads/2025/02/logotipo-1.svg",
   },
+  {
+    name: "Anima Village",
+    website: "https://www.animavillage.com/",
+    report:
+      "https://datastudio.google.com/reporting/80471f6d-1c9a-4ca0-bfcf-aade91bc7bc9/",
+    logo: "http://wp.sanruiz.co/wp-content/uploads/2026/06/logo-anima.svg",
+  },
 ];
 
 export default function SomaInformsPage() {

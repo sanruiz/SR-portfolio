@@ -14,9 +14,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white dark:bg-zinc-950 flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-[#111214] flex items-center justify-center">
         <div className="text-center px-4">
-          <p className="font-mono text-violet-600 dark:text-violet-400 text-sm mb-4">// 404</p>
+          <p className="font-mono text-violet-600 dark:text-violet-400 text-sm mb-4">
+            {"// 404"}
+          </p>
           <h1 className="text-4xl font-bold text-zinc-900 dark:text-white mb-4">
             Project Not Found
           </h1>
@@ -35,9 +37,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950">
+    <div className="min-h-screen bg-white dark:bg-[#111214]">
       {/* Hero area */}
-      <div className="relative bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 pt-28 pb-16 overflow-hidden">
+      <div className="relative bg-zinc-50 dark:bg-[#111214] border-b border-zinc-200 dark:border-zinc-800 pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(124,58,237,0.06),transparent)] dark:bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(124,58,237,0.12),transparent)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-40" />
 
@@ -53,7 +55,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* Label */}
           <p className="font-mono text-violet-600/80 dark:text-violet-400/80 text-sm mb-3 tracking-wide">
-            // project
+            {"// project"}
           </p>
 
           {/* Title */}

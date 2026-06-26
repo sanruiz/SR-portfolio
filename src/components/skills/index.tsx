@@ -54,7 +54,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="bg-zinc-50 dark:bg-zinc-950 py-24" id="skills">
+    <section className="bg-zinc-50 dark:bg-[#111214] py-24" id="skills">
       <div className="container mx-auto max-w-screen-xl px-4">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-14">
@@ -83,7 +83,7 @@ export default function Skills() {
         </div>
 
         <p className="text-zinc-400 dark:text-zinc-600 font-mono text-sm mt-10">
-          // always learning and integrating new tools
+          {"// always learning and integrating new tools"}
         </p>
       </div>
     </section>

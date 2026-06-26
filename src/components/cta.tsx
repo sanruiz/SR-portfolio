@@ -1,13 +1,13 @@
 export default function Cta() {
   return (
-    <section className="relative bg-zinc-100 dark:bg-zinc-950 border-y border-zinc-200 dark:border-zinc-800 py-28 overflow-hidden">
+    <section className="relative bg-zinc-100 dark:bg-[#111214] border-y border-zinc-200 dark:border-zinc-800 py-28 overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,rgba(124,58,237,0.06),transparent)] dark:bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,rgba(124,58,237,0.12),transparent)]" />
       <div className="absolute inset-0 bg-dot-grid opacity-60" />
 
       <div className="relative container mx-auto max-w-screen-xl px-4 text-center">
         <p className="font-mono text-violet-600/80 dark:text-violet-400/80 text-sm mb-5 tracking-wide">
-          // open to new opportunities
+          {"// open to new opportunities"}
         </p>
 
         <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 leading-tight tracking-tight">
